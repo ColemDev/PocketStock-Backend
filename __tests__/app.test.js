@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 const request = require("supertest");
 const app = require("../app");
+const Components = require("../Models/Components.model");
+const Orders = require("../Models/Orders.model");
+const Products = require("../Models/Products.model");
 
 require("dotenv").config();
 /*connecting to the database before each test. */
@@ -13,26 +16,25 @@ afterEach(async () => {
   await mongoose.connection.close();
 });
 
-//Components
-// describe("POST /components", () => {
-//   it("should create a new component", async () => {
-//     const id = 100;
-//     const component = {
-//       id,
-//       component: "swallow-tail drawer back",
-//       stockLevel: 24,
-//       triggerPoint: 12,
-//     };
-//     jest
-//       .spyOn(Components.prototype, "save")
-//       .mockImplementationOnce(() => component);
-//     const res = await request(app).post("/api/components").send();
-//     console.log(res);
-//     expect(res.statusCode).toBe(201);
-//     expect(res.body.component).toBe(component.component);
-//     expect(res.body).hasOwnProperty(id);
-//   });
-// });
+Components;
+describe("POST /components", () => {
+  it("should create a new component", async () => {
+    const id = 100;
+    const component = {
+      component: "swallow-tail drawer back",
+      stockLevel: 24,
+      triggerPoint: 12,
+    };
+    jest
+      .spyOn(Components.prototype, "save")
+      .mockImplementationOnce(() => component);
+    const res = await request(app).post("/api/components").send();
+    console.log(res);
+    expect(res.statusCode).toBe(201);
+    expect(res.body.component).toBe(component.component);
+    expect(res.body).hasOwnProperty(id);
+  });
+});
 
 describe("GET /components", () => {
   it("should return all components", async () => {
@@ -79,7 +81,7 @@ describe("PATCH /components/:id", () => {
       .patch(`/api/components/${id}`)
       .send(component);
     expect(findByIdAndUpdateSpy).toHaveBeenCalled();
-    expect(res.statusCode).toBe(200);
+    expect(res.statusCode).toBe(201);
     expect(res.body.component).toBe("dove-tailed joint drawer back");
     expect(res.body.id).toBe(2);
     findByIdAndUpdateSpy.mockRestore();

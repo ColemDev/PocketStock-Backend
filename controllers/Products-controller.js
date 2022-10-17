@@ -1,15 +1,14 @@
 const Products = require("../Models/Products.model");
+const Components = require("../Models/Components.model");
 
 module.exports = {
   createProducts: async (req, res, next) => {
     // Product object should look like:
-    const { id, productName, components, __v } = req.body;
+    const { productName, components } = req.body;
 
     const products = new Products({
-      id,
       productName,
       components,
-      __v,
     });
     try {
       const dataToSave = products.save();

@@ -2,10 +2,9 @@ const Components = require("../Models/Components.model");
 
 module.exports = {
   createComponents: async (req, res, next) => {
-    const { id, component, stockLevel, triggerPoint } = req.body;
+    const { component, stockLevel, triggerPoint } = req.body;
 
     const components = new Components({
-      id,
       component,
       stockLevel,
       triggerPoint,

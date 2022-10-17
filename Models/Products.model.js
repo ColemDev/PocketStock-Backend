@@ -1,21 +1,29 @@
 const mongoose = require("mongoose");
 
-const productsSchema = new mongoose.Schema({
-  id: {
+const productComponentSchema = new mongoose.Schema({
+  componentId: {
+    required: true,
+    type: mongoose.Types.ObjectId,
+    ref: "Components",
+  },
+  component: {
+    required: true,
+    type: String,
+  },
+  quantity: {
     required: true,
     type: Number,
   },
+});
+
+const productsSchema = new mongoose.Schema({
   productName: {
     required: true,
     type: String,
   },
   components: {
     required: true,
-    type: Array,
-  },
-  __v: {
-    required: false,
-    type: Number,
+    type: [productComponentSchema],
   },
 });
 

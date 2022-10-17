@@ -7,9 +7,9 @@ const OrdersController = require("./controllers/Orders-controller");
 
 const ProductsController = require("./controllers/Products-controller");
 
-router.post("/components/create", ComponentsController.createComponents);
+router.post("/components/", ComponentsController.createComponents);
 
-router.get("/components/getAll", ComponentsController.getAllComponents);
+router.get("/components/", ComponentsController.getAllComponents);
 
 router.get("/components/:id", ComponentsController.getComponentById);
 
@@ -19,9 +19,9 @@ router.delete("/components/:id", ComponentsController.deleteComponentById);
 
 // Orders Routes
 
-router.post("/orders/create", OrdersController.createOrders);
+router.post("/orders/", OrdersController.createOrders);
 
-router.get("/orders/getAll", OrdersController.getAllOrders);
+router.get("/orders/", OrdersController.getAllOrders);
 
 router.get("/orders/:id", OrdersController.getOrderById);
 
@@ -31,9 +31,9 @@ router.delete("/orders/:id", OrdersController.deleteOrderById);
 
 //Products Routes
 
-router.post("/products/create", ProductsController.createProducts);
+router.post("/products/", ProductsController.createProducts);
 
-router.get("/products/getAll", ProductsController.getAllProducts);
+router.get("/products/", ProductsController.getAllProducts);
 
 router.get("/products/:id", ProductsController.getProductById);
 
