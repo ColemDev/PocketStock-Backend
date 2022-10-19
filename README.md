@@ -4,7 +4,7 @@
  
 ### gitHub Repository
  
-https://github.com/ColemDev/H-and-Ms-PocketStockBackend
+https://github.com/ColemDev/PocketStock-Backend
  
 ### Hosted Server
  
@@ -29,24 +29,24 @@ To set up this api you will first need to clone from the provided github repo at
 ### HTTPS:
  
 ```
-git clone https://github.com/ColemDev/H-and-Ms-PocketStockBackend
+git clone https://github.com/ColemDev/PocketStock-Backend
 ```
  
 ### SSL:
  
 ```
-git clone git@github.com:ColemDev/H-and-Ms-PocketStockBackend.git
+git clone git@github.com:ColemDev/PocketStock-Backend.git
 ```
  
 ### Git CLI:
  
 ```
-gh repo clone ColemDev/H-and-Ms-PocketStockBackend
+gh repo clone ColemDev/PocketStock-Backend
 ```
  
 After cloning, you will need to install the dependencies. 
  
-cd into the “pocketstock” directory and type the following into the terminal
+cd into your main project directory and type the following into the terminal
 ```
 npm i
 ```
