@@ -18,7 +18,7 @@ This repo is an api which showcases back end coding using modules such as expres
  
 ## - Setup -
  
-###Minimum Versions (dependencies?)
+### Minimum Versions
  
 node : v17.8.0
 mongodb: v5.0.13
